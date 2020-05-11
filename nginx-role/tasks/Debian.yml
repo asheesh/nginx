@@ -10,5 +10,5 @@
   template:
     src: nginx.j2
     dest: /var/www/html/index.html
-  notify:
-  - restart nginx
+ # notify:
+ # - restart nginx
