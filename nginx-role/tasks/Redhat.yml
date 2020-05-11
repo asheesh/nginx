@@ -1,0 +1,11 @@
+---
+- name: Installing Nginx
+  become: yes
+  command: yum update -y ; amazon-linux-extras install nginx1.12 -y
+  
+- name: Copying Template
+  template:
+    src: nginx.j2
+    dest: /usr/share/nginx/html/index.html
+  notify:
+  - restart nginx

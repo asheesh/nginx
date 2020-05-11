@@ -1,0 +1,14 @@
+---
+- name: Installing 
+  apt:
+    name: nginx
+    state: present  
+  become: yes
+
+- name: Copying template file
+  become: yes
+  template:
+    src: nginx.j2
+    dest: /var/www/html/index.html
+  notify:
+  - restart nginx

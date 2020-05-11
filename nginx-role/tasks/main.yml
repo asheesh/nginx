@@ -1,0 +1,10 @@
+---
+# tasks file for nginx
+
+- include_tasks: Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- include_tasks: Redhat.yml
+  when: ansible_os_family == "Redhat"
+
+- include_tasks: service.yml
