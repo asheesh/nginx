@@ -3,7 +3,7 @@
   become: yes
   command: yum update -y ; amazon-linux-extras install nginx1.12 -y
   
-- name: Copying Template
+- name: Copying Template to EC2
   template:
     src: nginx.j2
     dest: /usr/share/nginx/html/index.html
